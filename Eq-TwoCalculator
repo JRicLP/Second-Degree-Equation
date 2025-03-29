@@ -1,0 +1,23 @@
+import math
+
+print("Seja bem-vindo à calculadora de Equações do Segundo Grau!")
+
+print("Digite os valores elementares dos coeficientes da equação:")
+valor_de_a = float(input("Digite o valor de A:"))
+valor_de_b = float(input("Digite o valor de B:"))
+valor_de_c = float(input("Digite o valor de C:"))
+
+print("A equação ficará na forma: {}x^2 + ({}x) + ({})".format(valor_de_a, valor_de_b, valor_de_c))
+
+delta = (valor_de_b ** 2) - 4 * valor_de_a * valor_de_c
+
+if (delta < 0):
+    print("A equação sugerida não apresenta raízes reais,\npois Delta é menor que zero.")
+elif (delta == 0):
+    print("A equação sugerida apresenta uma raíz única,\npois Delta é igual a zero.")
+    raiz_unica = (-valor_de_b) / 2 * valor_de_a
+else:
+    primeira_raiz = ((-valor_de_b) + math.sqrt(delta)) / (2 * valor_de_a)
+    segunda_raiz = ((-valor_de_b) - math.sqrt(delta)) / (2 * valor_de_a)
+    print("A primeira raíz será: {}".format(primeira_raiz))
+    print("A segunda raíz será: {}".format(segunda_raiz))
