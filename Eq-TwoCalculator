@@ -1,9 +1,16 @@
-import math
+from math import sqrt
 
 print("Seja bem-vindo à calculadora de Equações do Segundo Grau!")
 
 print("Digite os valores elementares dos coeficientes da equação:")
+
 valor_de_a = float(input("Digite o valor de A:"))
+#No próximo bloco de código, nós vamos impor essa condição para garantir que o usuário não digite 0 no coeficiente A
+if valor_de_a == 0:
+    while(valor_de_a == 0):
+        print("Esse valor é inválido para a descrição de uma Equação do 2° Grau, digite novamente:")
+        valor_de_a = float(input("Digite o valor de A:"))
+
 valor_de_b = float(input("Digite o valor de B:"))
 valor_de_c = float(input("Digite o valor de C:"))
 
@@ -17,7 +24,7 @@ elif (delta == 0):
     print("A equação sugerida apresenta uma raíz única,\npois Delta é igual a zero.")
     raiz_unica = (-valor_de_b) / 2 * valor_de_a
 else:
-    primeira_raiz = ((-valor_de_b) + math.sqrt(delta)) / (2 * valor_de_a)
-    segunda_raiz = ((-valor_de_b) - math.sqrt(delta)) / (2 * valor_de_a)
+    primeira_raiz = ((-valor_de_b) + sqrt(delta)) / (2 * valor_de_a)
+    segunda_raiz = ((-valor_de_b) - sqrt(delta)) / (2 * valor_de_a)
     print("A primeira raíz será: {}".format(primeira_raiz))
     print("A segunda raíz será: {}".format(segunda_raiz))
